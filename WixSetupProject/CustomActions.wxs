@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>    
+    <Binary Id="CustomActionBinary" SourceFile="$(var.CustomActions.TargetDir)$(var.CustomActions.TargetName).CA.dll"/>
+    <CustomAction Id="InstallCustomAction" BinaryKey="CustomActionBinary" DllEntry="CreateLogFile"  />
+    <CustomAction Id="RemoveCustomAction" BinaryKey="CustomActionBinary" DllEntry="DeleteLogFile"  />    
+  </Fragment>
+
+  <Fragment>
+    <!-- Step 3: Include the custom action -->
+    <Property Id="WixShellExecTarget" Value="[#FileWatcher.exe]" />
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+  </Fragment>
+</Wix>

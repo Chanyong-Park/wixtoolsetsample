@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <ComponentGroup Id="RegistryEntries" Directory="INSTALLFOLDER">
+      <Component>
+        <RegistryKey Root="HKCU" Key="SoftWare\!(bind.property.Manufacturer)\!(bind.property.ProductName)">
+          <RegistryValue Name="Name" Type="string" Value="[USERNAME]" KeyPath="yes"/>
+        </RegistryKey>
+      </Component>
+
+      <Component>
+        <RegistryKey Root="HKCU" Key="SoftWare\!(bind.property.Manufacturer)\!(bind.property.ProductName)">
+          <RegistryValue Name="Company" Type="string" Value="[COMPANYNAME]" KeyPath="yes"/>
+        </RegistryKey>
+      </Component>
+
+      <Component>
+        <RegistryKey Root="HKCU" Key="SoftWare\!(bind.property.Manufacturer)\!(bind.property.ProductName)">
+          <RegistryValue Name="InstallPath" Type="string" Value="[INSTALLFOLDER]" KeyPath="yes"/>
+        </RegistryKey>
+      </Component>
+
+      <Component>
+        <RegistryKey Root="HKCU" Key="SoftWare\!(bind.property.Manufacturer)\!(bind.property.ProductName)">
+          <RegistryValue Name="Version" Type="string" Value="[ProductVersion]" KeyPath="yes"/>
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+	</Fragment>
+</Wix>

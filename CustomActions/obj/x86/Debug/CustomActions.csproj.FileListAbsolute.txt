@@ -1,0 +1,7 @@
+D:\Test\FileWatcherSolution\CustomActions\bin\Debug\CustomActions.dll
+D:\Test\FileWatcherSolution\CustomActions\bin\Debug\CustomActions.CA.dll
+D:\Test\FileWatcherSolution\CustomActions\bin\Debug\CustomActions.pdb
+D:\Test\FileWatcherSolution\CustomActions\bin\Debug\Microsoft.Deployment.WindowsInstaller.dll
+D:\Test\FileWatcherSolution\CustomActions\bin\Debug\Microsoft.Deployment.WindowsInstaller.xml
+D:\Test\FileWatcherSolution\CustomActions\obj\x86\Debug\CustomActions.dll
+D:\Test\FileWatcherSolution\CustomActions\obj\x86\Debug\CustomActions.pdb

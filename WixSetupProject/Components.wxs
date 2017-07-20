@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component>
+        <File Id="$(var.FileWatcher.TargetFileName)" Source="$(var.FileWatcher.TargetPath)">
+          <Shortcut Id="ProgramMenuFolderShortCut"
+                    Name="!(bind.property.ProductName)"
+                    Description="file monitoring shortcut on program menu"
+                    Directory="ProgramMenuFolderShortcut"
+                    WorkingDirectory="INSTALLFOLDER"
+                    Advertise="yes"                    
+                    Icon="app.ico"
+                    Arguments="[USERNAME]" />
+
+          <Shortcut Id="DesktopShortcut"
+                    Directory="DesktopFolder"
+                    Name="!(bind.property.ProductName)"
+                    Description="file monitoring shortcut on desktop"
+                    WorkingDirectory="INSTALLFOLDER"
+                    Advertise="yes"
+                    Icon="app.ico"
+                    Arguments="[COMPANYNAME]" />
+        </File>
+        <RemoveFolder Id="DeleteProgramMenuFolderShortcut"
+                      Directory="ProgramMenuFolderShortcut"
+                      On="uninstall" />
+        <RemoveFolder Id="DeleteDesktopShortcut"
+                      Directory="DesktopFolder"
+                      On="uninstall" />
+      </Component>
+
+      <Component>
+        <File Id="$(var.FileWatcher.TargetFileName).config" Source="$(var.FileWatcher.TargetDir)FileWatcher.exe.config" />
+      </Component>
+    </ComponentGroup>
+
+    <Component Id="UninstallShortcut" Guid="*" Directory="ProgramMenuFolderShortcut">
+      <Shortcut Id="UninstallThisProduct"
+                Name="Uninstall FileWatcher"
+                Description="Uninstalls the FileWatcher Application"
+                Target="[System64Folder]msiexec.exe"
+                Arguments="/x [ProductCode]" />
+      <RegistryValue Root="HKCU" Key="SoftWare\!(bind.property.Manufacturer)\!(bind.property.ProductName)" Name="installed" Type="integer" Value="1"
+                      KeyPath="yes" />
+    </Component>
+
+    <ComponentGroup Id="Libs" Directory="INSTALLFOLDER">
+      <Component>
+        <File Source="$(var.SolutionDir)Lib\test.dll" />
+      </Component>
+      <Component>
+        <File Source="$(var.SolutionDir)Lib\test2.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

@@ -1,0 +1,11 @@
+obj\Debug\Product.wixobj
+obj\Debug\RegistryEntries.wixobj
+obj\Debug\Components.wixobj
+obj\Debug\Directories.wixobj
+obj\Debug\CustomUI.wixobj
+obj\Debug\CustomActions.wixobj
+D:\Test\FileWatcherSolution\WixSetupProject\bin\Debug\FileWatcher.msi
+D:\Test\FileWatcherSolution\WixSetupProject\bin\Debug\FileWatcher.wixpdb
+obj\Debug\WixSetupProject.wixproj.BindContentsFileListnull.txt
+obj\Debug\WixSetupProject.wixproj.BindOutputsFileListnull.txt
+obj\Debug\WixSetupProject.wixproj.BindBuiltOutputsFileListnull.txt

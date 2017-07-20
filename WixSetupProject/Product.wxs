@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <?define FileWatcher_TargetDir=$(var.FileWatcher.TargetDir)?>
+  
+  <!-- 
+    Product.Language: 1033(en-US) | 18(ko) | 1042(ko-KR)
+  -->
+	<Product Id="{A635A888-DBD1-4BAF-870E-A162435DE959}" Name="FileWatcher" Language="1033" Version="1.0.0.0" Manufacturer="PNG" UpgradeCode="{938aae37-afd5-4e90-a1b8-819a71d51d47}">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <!-- cab파일을 msi파일에 포함 -->
+		<MediaTemplate EmbedCab="yes" />
+
+    <!--- .net fx dependency -->
+    <PropertyRef Id="NETFRAMEWORK45"/>
+    <Condition Message="This application requires .NET Framework 4.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK45]]>
+    </Condition>
+    <!--<Condition Message="This application requires .NET Framework 4.5.2 or higher is installed. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK45 >= "#379893"]]>
+    </Condition>-->
+    
+    <!-- 약관 -->
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.FileWatcher.TargetDir)License.rtf"/>
+    <!--<WixVariable Id="WixUIDialogBmp" Value="dlgbmp.bmp" />-->
+
+    <!-- 아이콘 -->
+    <Icon Id="app.ico" SourceFile="$(var.FileWatcher.ProjectDir)app.ico"/>    
+
+    <!-- Install UI: WixUI_Advanced, WixUI_FeatureTree, WixUI_InstallDir, WixUI_Minimal, WixUI_Mondo, CustomUI --><!--
+    <UIRef Id="WixUI_Minimal" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch My Application Name" />-->
+    
+    <UI>
+        <UIRef Id="WixUI_Minimal" />
+        <!-- Step 2: Add UI to your installer / Step 4: Trigger the custom action -->
+        <Publish Dialog="ExitDialog" 
+            Control="Finish" 
+            Event="DoAction" 
+            Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch My Application Name" />
+    
+    <Feature Id="ProductFeature" Title="File Watcher Application" Level="1" Description="Install File Watcher Application">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="Libs" />
+      <ComponentRef Id="UninstallShortcut" />
+      <ComponentGroupRef Id="RegistryEntries" />
+    </Feature>
+
+    <!-- Define when the custom actions will be called -->
+    <InstallExecuteSequence>
+      <!--Called during installation-->
+      <Custom Action="InstallCustomAction" After="InstallFinalize">NOT Installed</Custom>
+      <!--Called during uninstall-->
+      <Custom Action="RemoveCustomAction" After="InstallFinalize">Installed</Custom>
+    </InstallExecuteSequence>
+  </Product>
+</Wix>

@@ -1,0 +1,4 @@
+D:\Test\FileWatcherSolution\FileWatcher\bin\Debug\FileWatcher.exe
+D:\Test\FileWatcherSolution\FileWatcher\bin\Debug\FileWatcher.exe.config
+D:\Test\FileWatcherSolution\Lib\test.dll
+D:\Test\FileWatcherSolution\Lib\test2.dll

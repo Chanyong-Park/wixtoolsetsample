@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileWatcher", "FileWatcher\FileWatcher.csproj", "{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "WixSetupProject", "WixSetupProject\WixSetupProject.wixproj", "{76CF5B8E-D01F-4F0C-A032-3C8DD9E5A0EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomActions", "CustomActions\CustomActions.csproj", "{7095DC66-2070-44C7-93CF-43851A8313E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}.Debug|x86.Build.0 = Debug|Any CPU
+		{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C1AEC7A-64AB-433F-AC74-AA2F52F9B356}.Release|x86.Build.0 = Release|Any CPU
+		{76CF5B8E-D01F-4F0C-A032-3C8DD9E5A0EA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{76CF5B8E-D01F-4F0C-A032-3C8DD9E5A0EA}.Debug|x86.ActiveCfg = Debug|x86
+		{76CF5B8E-D01F-4F0C-A032-3C8DD9E5A0EA}.Debug|x86.Build.0 = Debug|x86
+		{76CF5B8E-D01F-4F0C-A032-3C8DD9E5A0EA}.Release|Any CPU.ActiveCfg = Release|x86
+		{76CF5B8E-D01F-4F0C-A032-3C8DD9E5A0EA}.Release|x86.ActiveCfg = Release|x86
+		{76CF5B8E-D01F-4F0C-A032-3C8DD9E5A0EA}.Release|x86.Build.0 = Release|x86
+		{7095DC66-2070-44C7-93CF-43851A8313E4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{7095DC66-2070-44C7-93CF-43851A8313E4}.Debug|x86.ActiveCfg = Debug|x86
+		{7095DC66-2070-44C7-93CF-43851A8313E4}.Debug|x86.Build.0 = Debug|x86
+		{7095DC66-2070-44C7-93CF-43851A8313E4}.Release|Any CPU.ActiveCfg = Release|x86
+		{7095DC66-2070-44C7-93CF-43851A8313E4}.Release|x86.ActiveCfg = Release|x86
+		{7095DC66-2070-44C7-93CF-43851A8313E4}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

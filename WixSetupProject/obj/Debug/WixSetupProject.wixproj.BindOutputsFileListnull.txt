@@ -1,0 +1,2 @@
+D:\Test\FileWatcherSolution\WixSetupProject\bin\Debug\FileWatcher.msi
+D:\Test\FileWatcherSolution\WixSetupProject\bin\Debug\FileWatcher.wixpdb
